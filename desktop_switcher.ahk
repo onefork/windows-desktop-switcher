@@ -20,14 +20,14 @@ mapDesktopsFromRegistry()
 OutputDebug, [loading] desktops: %DesktopCount% current: %CurrentDesktop%
 
 #Include %A_ScriptDir%\user_config.ahk
-return
+; return
 
 ;
 ; This function examines the registry to build an accurate list of the current virtual desktops and which one we're currently on.
 ; Current desktop UUID appears to be in HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\SessionInfo\1\VirtualDesktops
 ; List of desktops appears to be in HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VirtualDesktops
 ;
-mapDesktopsFromRegistry() 
+mapDesktopsFromRegistry()
 {
     global CurrentDesktop, DesktopCount
 
@@ -126,7 +126,7 @@ _switchDesktopToTarget(targetDesktop)
     focusTheForemostWindow(targetDesktop)
 }
 
-updateGlobalVariables() 
+updateGlobalVariables()
 {
     ; Re-generate the list of desktops and where we fit in that. We do this because
     ; the user may have switched desktops via some other means than the script.
