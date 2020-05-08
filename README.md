@@ -1,29 +1,52 @@
-# windows-desktop-switcher
-An AutoHotkey script for Windows that lets a user switch virtual desktops by pressing <kbd>CapsLock</kbd> and a number row key at the sime time (e.g. <kbd>CapsLock</kbd> + <kbd>2</kbd> to switch to Desktop 2). It also provides other features, such as customizing the key combinations, creation/deletion of desktops by hotkey, etc. (see Hotkeys section below).
+# Win2Desk
+
+Save and recover Google Chrome Windows 10 virtual desktop assignments.
+
+- Works on the latest Window 10 (version 2004 as of this writing)
+- Saves the browser window assignments in the background (every 5 minutes)
+- Compatible with "The Great Suspender"
+- Backup support
+
+## Install & Run
+[Install AutoHotkey](https://autohotkey.com/download/) v1.1 or later, then run the `win2desk.ahk` script.
 
 ## Hotkeys
 
 Action | Keys 
 --- | :-:
-**Switch** to virtual desktop **1, 2, etc.**<br>*(you can also use the Numpad)*|<kbd>CapsLock</kbd> + <kbd>1</kbd><br><kbd>CapsLock</kbd> + <kbd>2</kbd><br>...
-**Switch back** to the last desktop used|<kbd>CapsLock</kbd> + <kbd>Tab</kbd>
+**Recover** virtual desktop assignments|<kbd>Win</kbd> + <kbd>F12</kbd>
+**Force save** virtual desktop assignments|<kbd>Win</kbd> + <kbd>F11</kbd>
+**Force refresh** windows list|<kbd>Win</kbd> + <kbd>F5</kbd>
+**Switch** to virtual desktop **1, 2, etc.**<br>*(you can also use the Numpad)*|<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd><br><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd><br>...
+**Switch back** to the last desktop used|<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Tab</kbd>
+**Move** the current window to another desktop, then switch to it|<kbd>Ctrl</kbd> + <kbd>Win</kbd> + <kbd>1</kbd><br><kbd>Ctrl</kbd> + <kbd>Win</kbd> + <kbd>2</kbd><br>...
+
+## References
+- [DLL - VirtualDesktopAccessor](https://github.com/Ciantic/VirtualDesktopAccessor)
+- [AHK - windows-desktop-switcher](https://github.com/pmb6tz/windows-desktop-switcher)
+- [AHK - URL of current browser tab](https://www.autohotkey.com/boards/viewtopic.php?t=3702)
+- [APP - SylphyHorn](https://github.com/Grabacr07/SylphyHorn)
+- [APP - VirtualDesktop](https://github.com/MScholtes/VirtualDesktop)
+- [APP - PowerToys](https://github.com/microsoft/PowerToys)
+- [DBG - DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)
+
+## Based on windows-desktop-switcher
+An AutoHotkey script for Windows that lets a user switch virtual desktops by pressing <kbd>CapsLock</kbd> and a number row key at the sime time (e.g. <kbd>CapsLock</kbd> + <kbd>2</kbd> to switch to Desktop 2). It also provides other features, such as customizing the key combinations, creation/deletion of desktops by hotkey, etc. (see Hotkeys section below).
+
+## Other hotkeys (disabled by default)
+
+Action | Keys 
+--- | :-:
 **Switch** to the virtual desktop on the **left**<br>*(auto-cycles from the first to the last desktop)*|<kbd>CapsLock</kbd> + <kbd>A</kbd><br><kbd>CapsLock</kbd> + <kbd>P</kbd>
 **Switch** to the virtual desktop on the **right**<br>*(auto-cycles from the last to the first desktop)*|<kbd>CapsLock</kbd> + <kbd>S</kbd><br><kbd>CapsLock</kbd> + <kbd>N</kbd>
 **Create** a new virtual desktop|**<kbd>CapsLock</kbd> + <kbd>C</kbd>**
 **Delete** the current virtual desktop|<kbd>CapsLock</kbd> + <kbd>D</kbd>
-**Move** the current window to another desktop, then switch to it<br>*Keys <kbd>Q</kbd>, <kbd>W</kbd>, etc. correspond to 1st, 2nd, etc. desktops*|<kbd>CapsLock</kbd> + <kbd>Q</kbd><br><kbd>CapsLock</kbd> + <kbd>W</kbd><br>...
 
 Note, <kbd>CapsLock</kbd> continues to function normally even when it is used as a modifier.
 
 If you'd like, you can [enable the alternate configuration](https://github.com/pmb6tz/windows-desktop-switcher/issues/44), to use <kbd>Ctrl</kbd> + <kbd>Alt</kbd> as hotkey combination keys instead of <kbd>CapsLock</kbd> (e.g. use <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> to switch to the Desktop 1, just as you would use <kbd>CapsLock</kbd> + <kbd>1</kbd>).
 
 You can also customize the hotkeys and actions as described in the section below.
-
-## Overview
-This script creates more convenient hotkeys for switching virtual desktops in Windows 10. I built this to better mirror the mapping I use on linux (with dwm), and it's always annoyed me that Windows does not have better hotkey support for this feature (for instance, there's no way to go directly to a desktop by number).
-
-## Running
-[Install AutoHotkey](https://autohotkey.com/download/) v1.1 or later, then run the `desktop_switcher.ahk` script (open with AutoHotkey if prompted). You can disable the switching animation by opening "Adjust the appearance and performance of Windows" and then unselecting the checkmark "Animate windows when minimizing and maximizing".
 
 ### Notes about Windows 1809/1903≤ Updates
 This project relies partly on [VirtualDesktopAccessor.dll](https://github.com/Ciantic/VirtualDesktopAccessor) (for moving windows to other desktops). This binary is included in this repository for convenience, and was recently updated to work with the 1809/1903≤ updates. 
